@@ -24,7 +24,7 @@ class Solution(object):
         内存消耗 : 12.5 MB, 在Two Sum的Python提交中击败了35.27% 的用户
         '''
         
-        # O(n)
+        # 时间O(n) 空间O(n)
         dic = {}
         for i, num in enumerate(nums):
             if num in dic:
@@ -36,5 +36,8 @@ class Solution(object):
         内存消耗 : 13.1 MB, 在Two Sum的Python提交中击败了11.15% 的用户
         
         '''
+        
+        
+        
         
         
