@@ -27,5 +27,7 @@ def combine( n, k):
     
     return answer   
 
-
-combine(10,4)
+'''
+执行用时 : 80 ms, 在Combinations的Python提交中击败了95.31% 的用户
+内存消耗 : 13.3 MB, 在Combinations的Python提交中击败了32.49% 的用户
+'''
