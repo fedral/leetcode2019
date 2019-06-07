@@ -22,13 +22,29 @@ class Solution(object):
                 p = perm[:i] + [nums[0]] + perm[i:]
                 out.append(p)
         return out
-        '''
-        执行用时 : 28 ms, 在Permutations的Python提交中击败了98.57% 的用户
-        内存消耗 : 11.9 MB, 在Permutations的Python提交中击败了17.96% 的用户
-        '''
+    
+'''
+执行用时 : 28 ms, 在Permutations的Python提交中击败了98.57% 的用户
+内存消耗 : 11.9 MB, 在Permutations的Python提交中击败了17.96% 的用户
+'''
     
     
-       
+
+# backtrack
+def backtrack(first = 0):
+    if first == n:  
+        output.append(nums[:])
+    for i in range(first, n):
+        nums[first], nums[i] = nums[i], nums[first]
+        backtrack(first + 1)
+        nums[first], nums[i] = nums[i], nums[first]
+nums=[1,2,3,4]
+n = len(nums)
+output = []
+backtrack()
+
+
+
     
     
     
