@@ -54,3 +54,25 @@ class Solution(object):
         
         backtrack(0)
 
+
+
+'''
+执行用时 : 696 ms, 在Sudoku Solver的Python提交中击败了36.42% 的用户
+内存消耗 : 11.8 MB, 在Sudoku Solver的Python提交中击败了35.14% 的用户
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
