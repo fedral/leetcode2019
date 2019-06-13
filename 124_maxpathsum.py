@@ -20,8 +20,10 @@ class Solution:
                 return 0
             l = sum(root.left)
             r = sum(root.right)
+            # 记录最大值
             nonlocal ret
             ret = max(ret , l+r+root.val , root.val , root.val+l , root.val+r)
+            # 返回
             return max(root.val , root.val+l , root.val+r)
         
         ret = float('-inf')
