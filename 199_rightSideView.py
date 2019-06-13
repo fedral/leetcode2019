@@ -44,7 +44,25 @@ class Solution(object):
     
     
 
-    
+class Solution(object):
+    def rightSideView(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        if not root:
+            return []
+        res,q = [],[root]
+        while q:
+            len_level = len(q)
+            for i in range(len_level):
+                tmp = q.pop(0)
+                if tmp.left:
+                    q.append(tmp.left)
+                if tmp.right:
+                    q.append(tmp.right)
+            res.append(tmp.val)
+        return res    
     
     
     
