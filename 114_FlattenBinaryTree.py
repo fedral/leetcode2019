@@ -15,6 +15,7 @@ Created on Thu Jun 13 10:49:08 2019
 class Solution(object):
     def flatten(self, root):
         """
+        递归式:左子树 插到 右边，右子树 插到末尾。
         :type root: TreeNode
         :rtype: None Do not return anything, modify root in-place instead.
         """
