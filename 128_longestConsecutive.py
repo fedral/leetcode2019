@@ -16,7 +16,7 @@ class Solution(object):
         num_set = set(nums)
 
         for num in num_set:
-            if num - 1 not in num_set:
+            if num - 1 not in num_set:   #优化点：直接从局部最小开始 
                 current_num = num
                 current_streak = 1
 
