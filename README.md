@@ -1,5 +1,5 @@
 # leetcode2019
-# Programming with C++ and Python.
+# Programming with Python.
 # practice makes perfect!
 
 
