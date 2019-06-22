@@ -34,6 +34,7 @@ class Solution(object):
             if row == n:
                 self.count += 1
                 return
+            
             bits = ~(col | pie | na) & ((1 << n) - 1)
             while bits != 0:
                 pos = bits & -bits
