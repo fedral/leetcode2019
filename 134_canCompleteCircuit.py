@@ -15,16 +15,14 @@ class Solution(object):
         curr = 0
         start = 0
         sum = 0
-        for i in range(len(gas)):
-            curr += gas[i%len(gas)]
-            curr -= cost[i%len(gas)]
-            sum += gas[i%len(gas)]-cost[i%len(gas)]
+        for i in range( len(gas) ): 
+            curr += gas[i]-cost[i]
+            sum  += gas[i]-cost[i]
+            
             if curr < 0:
                 curr = 0
                 start = i+1
-                
-        if curr >= 0 and sum >= 0:
-            return start
-        return -1
+
+        return start  if sum >= 0 else -1
     
     
