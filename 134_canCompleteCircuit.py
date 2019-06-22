@@ -15,7 +15,7 @@ class Solution(object):
         curr = 0
         start = 0
         sum = 0
-        for i in range(start,start + len(gas)):
+        for i in range(len(gas)):
             curr += gas[i%len(gas)]
             curr -= cost[i%len(gas)]
             sum += gas[i%len(gas)]-cost[i%len(gas)]
