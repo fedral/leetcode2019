@@ -1,55 +1,59 @@
 # Definition for singly-linked list.
-# class ListNode:
+# class ListNode(object):
 #     def __init__(self, x):
 #         self.val = x
 #         self.next = None
 
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
-class Solution:
-    def addTwoNumbers(self, l1,l2):
-        # 逆序下的加法，逐个位置相加，标记借位。
+class Solution(object):
+    def addTwoNumbers(self, l1, l2):
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        l3=ListNode(-1) #dummy node
+        p1,p2,p3=l1,l2,l3
+        carry=0
         
-        n = l1.val + l2.val
-        l3 = ListNode(n % 10)
-        l3.next = ListNode(n // 10) # carry for next sum
-        p1 = l1.next
-        p2 = l2.next
-        p3 = l3
         while True:
+            '''
+            1 先合并正常对应的部分
+            2 再处理 单侧的情形
+            3 退出时 检查是否需要补最后节点。
+            
+            '''
             if p1 and p2:
-                sum = p1.val + p2.val + p3.next.val
-                p3.next.val = sum % 10
-                p3.next.next = ListNode(sum // 10)
-                p1 = p1.next
-                p2 = p2.next
-                p3 = p3.next
-            elif p1 and not p2:
-                # 剩下p1
-                sum = p1.val + p3.next.val
-                p3.next.val = sum % 10
-                p3.next.next = ListNode(sum // 10)
-                p1 = p1.next
-                p3 = p3.next
+                s=p1.val+p2.val+carry
+                carry=s//10
+                p3.next = ListNode(s%10)
+                p1,p2,p3 = p1.next,p2.next,p3.next
             elif not p1 and p2:
-                # 剩下p2
-                sum = p2.val + p3.next.val
-                p3.next.val = sum % 10
-                p3.next.next = ListNode(sum // 10)
-                p2 = p2.next
-                p3 = p3.next
+                s=carry+p2.val
+                carry=s//10
+                p3.next = ListNode(s%10)
+                p2,p3 = p2.next,p3.next
+            elif not p2 and p1:
+                s=carry+p1.val
+                carry=s//10
+                p3.next = ListNode(s%10)
+                p1,p3 = p1.next,p3.next
             else:
-                # 计算结束
-                if p3.next.val == 0:
-                    p3.next = None
+                if carry == 1:
+                    p3.next=ListNode(1)
                 break
-        return l3
-    
-    
-    
-    
-    
+                
+        return l3.next
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
