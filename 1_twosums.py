@@ -13,7 +13,7 @@ class Solution(object):
         :rtype: List[int]
         """
         
-        # O(n^2) 
+        # 暴力法求解 (n^2) 
         l = len(nums)
         for i in range(l):
             for k in range(i+1,l):
@@ -25,6 +25,7 @@ class Solution(object):
         '''
         
         # 时间O(n) 空间O(n)
+        # 查表法
         dic = {}
         for i, num in enumerate(nums):
             if num in dic:
