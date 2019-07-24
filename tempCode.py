@@ -5,6 +5,7 @@ Spyder Editor
 This is a temporary script file.
 """
 
+'''
 def intersect(nums1, nums2):
     """
     :type nums1: List[int]
@@ -78,7 +79,20 @@ def partion(array,l,r):
         array[l],array[r] = array[r],array[l]
     return l
 
+'''
 
+
+def solution3(s):        
+    st = {} 
+    i, ans = 0, 0
+    for j in range(len(s)):
+        if s[j] in st:
+            i = max(st[s[j]], i)
+        ans = max(ans, j - i + 1)
+        st[s[j]] = j + 1
+    return ans  
+
+print(solution3('abcaccd'))
 
 
 

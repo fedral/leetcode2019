@@ -59,12 +59,15 @@ class Solution(object):
     def solution3(self,s):        
         '''
         #3 对#2的优化：直接利用小标，记录不重复字串 左侧的位置。
+        利用字典记录 
         '''
-        st = {}
+        st = {} 
         i, ans = 0, 0
+        # i:当前不重复字串的 滑动窗口的 左边位置，不断增加；
+        # st: 字典用于记录 不重复字串 每个字符位置的 下一个下标；
         for j in range(len(s)):
             if s[j] in st:
-                i = max(st[s[j]], i)
+                i = max(st[s[j]], i) # I的更新：一旦出现重复字符，更新为其下一个位置。 
             ans = max(ans, j - i + 1)
             st[s[j]] = j + 1
         return ans        
