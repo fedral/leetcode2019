@@ -48,7 +48,9 @@ class Solution(object):
                 tmp+=s[i]
                 res=max(res,len(tmp))
             else:
-                tmp=tmp[tmp.index(s[i])+1:]+s[i]  # string.index() O(1) ????
+                tmp=tmp[tmp.index(s[i])+1:]+s[i]  
+                # string.index() O(1) ????
+                # 建表字符表 记录下下标位置 保证O(1)
         return res
                 
             
